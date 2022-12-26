@@ -6,7 +6,14 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
 
   const updateQuery = (query) => {
     setQuery(query.trim());
-  }
+  };
+
+  const showingContacts =
+    query === ""
+      ? contacts
+      : contacts.filter((c) =>
+          c.name.toLowerCase().includes(query.toLowerCase())
+        );
 
   return (
     <div className="list-contacts">
@@ -16,12 +23,11 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
           type="text"
           placeholder="Search Contacts"
           value={query}
-          onChange={(event)=> updateQuery(event.target.value) }
+          onChange={(event) => updateQuery(event.target.value)}
         ></input>
       </div>
       <ol className="contact-list">
-        {console.log(query)}
-        {contacts.map((contact) => (
+        {showingContacts.map((contact) => (
           <li key={contact.id} className="contact-list-item">
             <div
               className="contact-avatar"
