@@ -1,9 +1,13 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 
 const ListContacts = ({ contacts, onDeleteContact }) => {
   return (
-    <ol className="contact-list">
+    <div className="list-contacts">
+      <div className="list-contacts-top">
+      <input className="search-contacts" type="text" placeholder="Search Contacts"></input>
+      </div>
+      <ol className="contact-list">
       {contacts.map((contact) => (
         <li key={contact.id} className="contact-list-item">
           <div
@@ -20,6 +24,7 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
         </li>
       ))}
     </ol>
+    </div>
   );
 };
 
