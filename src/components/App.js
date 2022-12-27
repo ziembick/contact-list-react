@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../src";
 import ListContacts from "./ListContacts";
+import * as ContactsApi from "../utils/ContactsAPI"
 
 const App = () => {
   const removeContact = (contact) => {
