@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../../src";
 import ListContacts from "./ListContacts";
-import * as ContactsApi from "../utils/ContactsAPI";
+import * as ContactsAPI from "../utils/ContactsAPI";
 
 const App = () => {
   const removeContact = (contact) => {
@@ -12,9 +12,11 @@ const App = () => {
 
   useEffect(() => {
     const getContacts = async () => {
-      const res = await ContactsApi.getAll();
+      const res = await ContactsAPI.getAll();
       setContacts(res);
     };
+
+    getContacts()
   }, []);
 
   return (
