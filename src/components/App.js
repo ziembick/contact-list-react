@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../../src";
 import ListContacts from "./ListContacts";
 import * as ContactsAPI from "../utils/ContactsAPI";
+import CreateContact from "./CreateContact";
 
 const App = () => {
   const removeContact = (contact) => {
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <div>
       <ListContacts contacts={contacts} onDeleteContact={removeContact} />
+      <CreateContact />
     </div>
   );
 };
