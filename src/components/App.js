@@ -23,10 +23,17 @@ const App = () => {
 
   return (
     <div>
-      <ListContacts contacts={contacts} onDeleteContact={removeContact} />
-      <CreateContact />
+      {
+        screen === "list" && (<ListContacts contacts={contacts} onDeleteContact={removeContact}/>) 
+      }
+      {
+        screen === "create" && (<CreateContact />)
+      }
     </div>
   );
 };
 
 export default App;
+
+/* <ListContacts contacts={contacts} onDeleteContact={removeContact} />
+<CreateContact /> */
