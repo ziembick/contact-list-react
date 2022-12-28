@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom"
+
 const CreateContact = () => {
     return (
-        <div>Create Contact</div>
+        <div>
+            <Link className="close-create-contact" to="/">
+            </Link>
+        </div>
     )
 }
 
