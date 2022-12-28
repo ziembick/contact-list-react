@@ -10,6 +10,7 @@ const App = () => {
   };
 
   const [contacts, setContacts] = useState([]);
+  const [screen, setScreen] = useState("create")
 
   useEffect(() => {
     const getContacts = async () => {
