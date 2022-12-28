@@ -10,6 +10,14 @@ const App = () => {
     setContacts(contacts.filter((c) => c.id !== contact.id));
   };
 
+
+  const createContact = (contact) => {
+    const create = async () => {
+      const res = await ContactsAPI.create(contact)
+      setContacts(contacts.concat(res))
+    }
+  }
+
   const [contacts, setContacts] = useState([]);
   // const [screen, setScreen] = useState("list");
 
