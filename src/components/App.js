@@ -31,7 +31,7 @@ const App = () => {
           <ListContacts contacts={contacts} onDeleteContact={removeContact} />
         }
       />
-      <Route path="/create" element={<CreateContact/>}/>
+      <Route path="/create" element={<CreateContact />} />
     </Routes>
 
     // <div>

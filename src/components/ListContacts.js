@@ -2,8 +2,6 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
-
 const ListContacts = ({ contacts, onDeleteContact }) => {
   const [query, setQuery] = useState("");
 
@@ -11,10 +9,9 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
     setQuery(query.trim());
   };
 
-
   const clearQuery = () => {
-    updateQuery("")
-  }
+    updateQuery("");
+  };
 
   const showingContacts =
     query === ""
@@ -38,17 +35,14 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
         </Link>
       </div>
 
-      {
-        showingContacts.length !== contacts.length && (
-          <div className="showing-contacts">
-            <span>
-              Now showing {showingContacts.length} of {contacts.length}
-            </span>
-            <button onClick={clearQuery}>Show all</button>
-          </div>
-        )
-      }
-
+      {showingContacts.length !== contacts.length && (
+        <div className="showing-contacts">
+          <span>
+            Now showing {showingContacts.length} of {contacts.length}
+          </span>
+          <button onClick={clearQuery}>Show all</button>
+        </div>
+      )}
 
       <ol className="contact-list">
         {showingContacts.map((contact) => (
